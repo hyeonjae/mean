@@ -1,10 +1,9 @@
 var app = angular.module('myapp', []);
 
-app.controller('PostsCtrl', function($scope, $http) {
+app.controller('PostsCtrl', function($scope, $http, PostsSvc) {
     
-    $http.get('http://localhost:3000/api/posts')
-        .success(function(posts) {
-            $scope.posts = posts;
+    PostsSvc.fetch().success(function(posts) {
+        $scope.posts = posts;
     });
 
     $scope.addPost = function () {
@@ -20,4 +19,10 @@ app.controller('PostsCtrl', function($scope, $http) {
             });
         }
     };
+});
+
+app.service('PostsSvc', function($http) {
+    this.fetch = function () {
+        return $http.get('/api/posts');
+    }
 });
