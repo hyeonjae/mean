@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 	});
 });
 
-router.post('/', function(req, res) {
+router.post('/', function(req, res, next) {
 	var post = new Post({
 		username: req.body.username,
 		body: req.body.body
@@ -19,7 +19,7 @@ router.post('/', function(req, res) {
 
 	post.save(function(err, post) {
 		if (err) {
-			return next(err)
+			return next(err);
 		}
 		res.json(201, post);
 	});
