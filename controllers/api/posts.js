@@ -2,7 +2,7 @@ var Post = require('../../models/post');
 var router = require('express').Router();
 
 
-router.get('/api/posts', function(req, res, next) {
+router.get('/', function(req, res, next) {
 	Post.find(function(err, posts) {
 		if (err) {
 			return next(err);
@@ -11,7 +11,7 @@ router.get('/api/posts', function(req, res, next) {
 	});
 });
 
-router.post('/api/posts', function(req, res) {
+router.post('/', function(req, res) {
 	var post = new Post({
 		username: req.body.username,
 		body: req.body.body
