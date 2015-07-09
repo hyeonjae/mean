@@ -26,6 +26,7 @@ $ npm install -g bower
 $ npm install -g gulp
 $ npm install --save gulp
 $ npm install --save gulp-concat
+$ npm install --save gulp-uglify
 ```
 
 # express, mongodb
