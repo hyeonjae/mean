@@ -27,6 +27,7 @@ $ npm install -g gulp
 $ npm install --save gulp
 $ npm install --save gulp-concat
 $ npm install --save gulp-uglify
+$ npm install --save gulp-ng-annotate
 ```
 
 # express, mongodb
