@@ -29,6 +29,7 @@ $ npm install -g bower
 ```sh
 $ npm install --save express
 $ npm install --save body-parser
+$ brew install mongodb
 $ npm install --save mongoose
 ```
 
