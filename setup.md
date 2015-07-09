@@ -33,4 +33,9 @@ $ brew install mongodb
 $ npm install --save mongoose
 ```
 
+# mongodb directory
+```sh
+$ mkdir -p data/db
+$ mongod --dbpath data/db
+```
 
