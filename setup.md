@@ -23,6 +23,9 @@ $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 # bower, gulp, grant
 ```sh
 $ npm install -g bower
+$ npm install -g gulp
+$ npm install --save gulp
+$ npm install --save gulp-concat
 ```
 
 # express, mongodb
@@ -38,4 +41,13 @@ $ npm install --save mongoose
 $ mkdir -p data/db
 $ mongod --dbpath data/db
 ```
+
+# nodemon
+```sh
+$ npm install -g nodemon
+$ nodemon server.js
+```
+
+
+
 
