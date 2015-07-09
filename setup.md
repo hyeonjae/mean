@@ -28,6 +28,7 @@ $ npm install --save gulp
 $ npm install --save gulp-concat
 $ npm install --save gulp-uglify
 $ npm install --save gulp-ng-annotate
+$ npm install --save gulp-sourcemaps
 ```
 
 # express, mongodb
@@ -50,6 +51,9 @@ $ npm install -g nodemon
 $ nodemon server.js
 ```
 
-
+# gulp watch
+```sh
+$ gulp watch:js
+```
 
 
