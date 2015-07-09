@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.min.js"></script>
+    <script src="../javascript/main.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body ng-app='myapp'>
+    
+    <div ng-controller='PostsCtrl' class='container'>
+        <h1>Recent Posts</h1>
+        
+        <form role='form'>
+            <div class='form-group'>
+                <div class='input-group'>
+                    <input ng-model='postBody' class='form-control' />
+                    <span class='input-group-btn'>
+                        <button ng-click='addPost()' 
+                                class='btn btn-default'>Add Post</button>
+                    </span>
+                </div>
+            </div>
+        </form>
+        
+        <ul class='list-group'>    
+            <!-- posts변수는 아래 javascript파일에서 $scope에서 만든 $scope.posts입니다. -->
+            <li ng-repeat='post in posts' class='list-group-item'>
+                <strong>@{{ post.username }}</strong>
+                <span>{{ post.body }}</span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
