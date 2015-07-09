@@ -1,2 +1,2 @@
-var app = angular.module('myapp', []);
+angular.module('myapp', []);
 

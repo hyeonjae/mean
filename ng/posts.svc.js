@@ -1,4 +1,4 @@
-angular.module('myapp', [])
+angular.module('myapp')
 .service('PostsSvc', function($http) {
     this.fetch = function () {
         return $http.get('/api/posts');
