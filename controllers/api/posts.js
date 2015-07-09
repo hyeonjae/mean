@@ -1,28 +1,28 @@
-var Post = require('../../javascript/post');
+var Post = require('../../models/post');
+var router = require('express').Router();
 
 
-module.exports = function (app) {
-	app.get('/api/posts', function(req, res, next) {
-		Post.find(function(err, posts) {
-			if (err) {
-				return next(err);
-			}
-			res.json(posts);
-		});
+router.get('/api/posts', function(req, res, next) {
+	Post.find(function(err, posts) {
+		if (err) {
+			return next(err);
+		}
+		res.json(posts);
+	});
+});
+
+router.post('/api/posts', function(req, res) {
+	var post = new Post({
+		username: req.body.username,
+		body: req.body.body
 	});
 
-	app.post('/api/posts', function(req, res) {
-		var post = new Post({
-			username: req.body.username,
-			body: req.body.body
-		});
-
-		post.save(function(err, post) {
-			if (err) {
-				return next(err)
-			}
-			res.json(201, post);
-		});
+	post.save(function(err, post) {
+		if (err) {
+			return next(err)
+		}
+		res.json(201, post);
 	});
-};
+});
 
+module.exports = router;
