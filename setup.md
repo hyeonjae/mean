@@ -55,6 +55,10 @@ $ nodemon server.js
 # gulp watch
 ```sh
 $ gulp watch:js
+$ gulp dev
 ```
 
-
+# jwt
+```sh
+$ npm install --save jwt-simple
+```
