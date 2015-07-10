@@ -23,3 +23,10 @@ $ npm install --save body-parser
   }
 }
 ```
+
+
+회원 가입
+```sh
+$ curl -XPOST -d '{"username":"{your ID}", "password":"{your pw"}' -H "Content-Type: application/json" "http://localhost:3000/api/users"
+```
+
