@@ -1,9 +1,15 @@
 var Post = require('../../models/post');
 var router = require('express').Router();
-
+var jwt = require('jwt-simple');
+var config = require('../../config');
 
 router.get('/', function(req, res, next) {
-	Post.find(function(err, posts) {
+	if (!req.headers['x-auth']) {
+		return res.send(401);
+	}
+
+	var auth = jwt.decode(req.headers['x-auth'], config.secret);
+	Post.find({username: auth.username}, function(err, posts) {
 		if (err) {
 			return next(err);
 		}
@@ -12,8 +18,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
+	var auth = jwt.decode(req.body.token, config.secret);
 	var post = new Post({
-		username: req.body.username,
+		username: auth.username,
 		body: req.body.body
 	});
 

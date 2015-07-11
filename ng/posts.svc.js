@@ -1,7 +1,9 @@
 angular.module('myapp')
-.service('PostsSvc', ['$http', function($http) {
+.service('PostsSvc', ['$http', 'UserSvc', function($http, UserSvc) {
     this.fetch = function () {
-        return $http.get('/api/posts');
+        return $http.get('/api/posts', {
+			headers: { 'X-Auth': UserSvc.token }
+        });
     }
 
 	this.create = function (post) {

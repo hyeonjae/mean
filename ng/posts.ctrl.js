@@ -1,5 +1,5 @@
 angular.module('myapp')
-.controller('PostsCtrl', ['$scope', 'PostsSvc', function($scope, PostsSvc) {
+.controller('PostsCtrl', ['$scope', 'PostsSvc', 'UserSvc', function($scope, PostsSvc, UserSvc) {
     
     PostsSvc.fetch().success(function(posts) {
         $scope.posts = posts;
@@ -10,7 +10,7 @@ angular.module('myapp')
         if (_.trim(postBody).length > 0) {
 
             PostsSvc.create({
-                username: 'hyeonjae',
+                token: UserSvc.token,
                 body: $scope.postBody
             })
             .success(function(post) {

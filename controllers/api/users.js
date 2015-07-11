@@ -27,8 +27,6 @@ router.post('/', function(req, res, next) {
 		}
 
 		user.password = hash;
-		console.log('[POST] /controllers/api/users');
-		console.log('      ', user);  
 		user.save(function(err) {
 			if (err) {
 				return next(err);
