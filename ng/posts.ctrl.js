@@ -1,9 +1,15 @@
 angular.module('myapp')
-.controller('PostsCtrl', ['$scope', 'PostsSvc', 'UserSvc', function($scope, PostsSvc, UserSvc) {
+.controller('PostsCtrl', ['$scope', 'PostsSvc', 'UserSvc', '$location', function($scope, PostsSvc, UserSvc, $location) {
     
-    PostsSvc.fetch().success(function(posts) {
-        $scope.posts = posts;
-    });
+    if (!UserSvc.token) {
+        $location.path('/login');
+    } else {
+        PostsSvc.fetch().success(function(posts) {
+            $scope.posts = posts;
+        }).error(function(err) {
+            $location.path('/login');
+        });
+    }
 
     $scope.addPost = function () {
         var postBody = $scope.postBody;
