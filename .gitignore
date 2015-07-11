@@ -1,2 +1,4 @@
-data/db/*
-assets/*
+data/db
+assets
+node_modules
+
