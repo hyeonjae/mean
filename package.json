@@ -16,7 +16,7 @@
     "mongoose": "^4.0.6"
   },
 	"scripts": {
-  	"start": "node index.js",
+  	"start": "node server.js",
   	"postinstall": "gulp css && gulp js && mongod --dbpath data/db"
 	}
 }
