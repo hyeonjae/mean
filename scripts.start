@@ -1,0 +1,4 @@
+"scripts": {
+	"start": "node server.js",
+	"postinstall": "gulp css && gulp js && mongod --dbpath data/db"
+}
