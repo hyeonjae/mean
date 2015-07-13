@@ -17,6 +17,6 @@
   },
 	"scripts": {
   	"start": "node server.js",
-  	"postinstall": "gulp css && gulp js && mongod --dbpath data/db"
+  	"postinstall": "gulp css && gulp js"
 	}
 }
